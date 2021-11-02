@@ -6,7 +6,7 @@ env:
   REGISTRY: docker.pkg.github.com
   IMAGE: docker.pkg.github.com/brentgruber/tdd-fastapi-docker/summarizer
   HEROKU_APP_NAME: murmuring-woodland-78611
-  HEROKU_REGISTRY_IMAGE: registry.heroku.com/${HEROKU_APP_NAME}/web
+  HEROKU_REGISTRY_IMAGE: registry.heroku.com/murmuring-woodland-78611/web
 
 jobs:
   build:
