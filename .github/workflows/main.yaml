@@ -3,7 +3,7 @@ name: Continuous Integration and Delivery
 on: [push]
 
 env:
-  IMAGE: docker.pkg.github.com/$(echo $GITHUB_REPOSITORY | tr '[A-Z' '[a-z]')/summarizer
+  IMAGE: docker.pkg.github.com/brentgruber/tdd-fastapi-docker/summarizer
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
       - name: Log in to Github Packages
         run: echo ${GITHUB_TOKEN} | docker login -u ${GITHUB_ACTOR} --password-stdin docker.pkg.github.com
         env:
-          GITHUB_TOKEN: $${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: $${{ secrets.GITHUB_TOKEN }}
           GITHUB_ACTOR: $${{ github.actor }}
       - name: Pull Image
         run: |
